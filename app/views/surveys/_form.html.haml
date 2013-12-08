@@ -10,9 +10,8 @@
     = f.label :name
     = f.text_field :name
 
-  =f.fields_for :questions do |builder|
-    = builder.label :content, "Question"
-    = builder.text_area :content, rows: 3 
-    
+  = f.fields_for :questions do |builder|
+    = render 'question_fields', :f => builder 
+
   .actions
     = f.submit 'Save'
